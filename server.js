@@ -24,6 +24,9 @@ app.get('/api/v1/reservations', (req, res) => {
     res.send(JSON.stringify(reservations, null, 2));
 });
 
+app.get('/api/v1/watilist', (req, res) => {
+    res.send(JSON.stringify(waitList, null, 2));
+});
 
 app.post('/reservation', (req, res) => {
     let body = req.body;
@@ -58,15 +61,4 @@ let reservations = [
 ];
 
 let waitList = [];
-
-// add to Reservations if no room then waitList
-
-
-
-
-
-
-
-
-
 
