@@ -1,0 +1,32 @@
+{
+  "name": "breakfast_club",
+  "version": "1.0.0",
+  "description": "week13 10/25 group project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhrenDavis12/breakfastClub.git"
+  },
+  "keywords": [
+    "breakfast",
+    "club",
+    "lunch",
+    "lonche",
+    "food",
+    "tacos"
+  ],
+  "author": "the whole united states (US)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EhrenDavis12/breakfastClub/issues"
+  },
+  "homepage": "https://github.com/EhrenDavis12/breakfastClub#readme",
+  "dependencies": {
+    "express": "4.16.4",
+    "path": "0.12.7"
+  }
+}
