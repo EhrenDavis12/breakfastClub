@@ -26,8 +26,8 @@ app.get('/api/v1/reservations', (req, res) => {
 
 
 app.post('/reservation', (req, res) => {
-    const body = req.body;
-    const obj = {
+    let body = req.body;
+    let obj = {
         routeName: body.routeName,
         name: body.name,
         phoneNumber: body.phoneNumber,
@@ -39,6 +39,8 @@ app.post('/reservation', (req, res) => {
         reservations.push(obj);
     else
         waitList.push(obj);
+
+    res.status(200).send();
 });
 
 app.listen(PORT, function () {
