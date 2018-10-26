@@ -24,6 +24,19 @@ app.get('/api/v1/reservations', (req, res) =>{
     res.send(JSON.stringify(reservations, null, 2));
 });
 
+app.post('/reservation', (req, res) => {
+    const body = req.body;
+    const obj = {
+        routeName:body.routeName,
+        name: body.name,
+        phoneNumber: body.phoneNumber,
+        email: body.email,
+        UniqueID: body.UniqueID
+    };
+
+    reservations.push(obj);
+});
+
 app.listen(PORT, function(){
     console.log(`Breakfast Club on PORT ${PORT}`);
 });
@@ -40,7 +53,6 @@ let reservations = [
 
 let waitList = [];
 
-//get all WaitList
 // add to Reservations if no room then waitList
 
 
