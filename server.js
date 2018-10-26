@@ -40,7 +40,6 @@ let reservations = [
 
 let waitList = [];
 
-//get all WaitList
 // add to Reservations if no room then waitList
 
 
