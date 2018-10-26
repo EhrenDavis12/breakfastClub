@@ -20,8 +20,8 @@ app.get("/reservation", function (req, res) {
     res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
-app.get('/api/v1/waitlist', (req, res) =>{
-    res.send(JSON.stringify(waitList, null, 2));
+app.get('/api/v1/reservations', (req, res) =>{
+    res.send(JSON.stringify(reservations, null, 2));
 });
 
 app.listen(PORT, function(){
@@ -40,7 +40,6 @@ let reservations = [
 
 let waitList = [];
 
-//get all Reservations 
 // add to Reservations if no room then waitList
 
 
