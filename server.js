@@ -9,22 +9,22 @@ app.use(express.static(__dirname + '/public'));
 const PORT = process.env.PORT || 8080;
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "public/home.html"));
 });
 
 app.get("/table", function (req, res) {
-    res.sendFile(path.join(__dirname, "table.html"));
+    res.sendFile(path.join(__dirname, "public/viewTable.html"));
 });
 
 app.get("/reservation", function (req, res) {
-    res.sendFile(path.join(__dirname, "reservation.html"));
+    res.sendFile(path.join(__dirname, "public/add.html"));
 });
 
 app.get('/api/v1/reservations', (req, res) => {
     res.send(JSON.stringify(reservations, null, 2));
 });
 
-app.get('/api/v1/watilist', (req, res) => {
+app.get('/api/v1/waitlist', (req, res) => {
     res.send(JSON.stringify(waitList, null, 2));
 });
 
@@ -43,7 +43,7 @@ app.post('/reservation', (req, res) => {
     else
         waitList.push(obj);
 
-    res.status(200).send();
+    res.status(200).sendFile(__dirname + '/public/add.html');
 });
 
 app.listen(PORT, function () {
