@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Star Wars - Express</title>
@@ -10,6 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="./dist/add.js"></script>
 </head>
+
 <body>
 
   <div class="container">
@@ -17,15 +19,15 @@
       <h1 class="text-center">Breakfast Club</h1>
       <h3 class="text-center">Make your Reservation</h3>
       <hr>
-     <div class="row justify-content-center">
-      <div class="text-center">
-      <a href="viewTable.html"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
-      <div class="text-center">
-          <a href="home.html"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> Home</button></a>
+      <div class="row justify-content-center">
+        <div class="text-center">
+          <a href="viewTable.html"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Tables</button></a>
+          <div class="text-center">
+            <a href="home.html"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> Home</button></a>
+          </div>
+
+        </div>
       </div>
-    
-    </div>
-    </div>
     </div>
     <div class="row">
 
@@ -36,59 +38,40 @@
             <h3><strong>Table Reservation</strong></h3>
           </div>
           <div class="card-body">
-            <form method="POST" role="form">
+            <form method="POST" role="form" action="./reservation">
 
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" name="name" id="name">
               </div>
 
               <div class="form-group">
-                <label for="role">Phone Number</label>
-                <input type="text" class="form-control" id="role">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" name="phoneNumber" id="phone">
               </div>
 
               <div class="form-group">
-                <label for="age">Email</label>
-                <input type="text" class="form-control" id="age">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" id="email">
               </div>
 
               <div class="form-group">
-                <label for="force-points">Unique ID</label>
-                <input type="text" class="form-control" id="force-points">
+                <label for="UniqueID">Unique ID</label>
+                <input type="text" class="form-control" name="UniqueID" id='id'>
               </div>
-
+              <br>
+              <div class="text-right">
+                <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span>
+                  Submit</button>
+              </div>
             </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="fa fa-fire"></span> Submit</button>
-            </div>
           </div>
         </div>
 
       </div>
     </div>
   </div>
-  <a href="http://localhost:8080/api/v1/waitlist">Waitlist</a> <a href="http://localhost:8080/api/v1/reservations">Reservation</a>
-  <!-- <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
-
-      // Question: What does this code do??
-      $.post("/api/characters", newCharacter)
-        .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding character...");
-        });
-    });
-  </script> -->
-
+  <a href="./api/v1/waitlist">Waitlist</a> <a href="./api/v1/reservations">Reservation</a>
 </body>
+
 </html>
